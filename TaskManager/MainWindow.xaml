@@ -1,0 +1,43 @@
+﻿<Window x:Class="TaskManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskManager"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"></RowDefinition>
+                <RowDefinition Height=".5*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <ListBox Name="blackListListBox"></ListBox>
+            </Grid>
+            <Grid Grid.Column="1">
+                <ListBox x:Name="processListBox" SelectionChanged="processListBox_SelectionChanged"></ListBox>
+            </Grid>
+            <Grid Grid.Column="0" Grid.Row="1">
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="tbBlackList" Width="220" Margin="4" FontSize="20" VerticalContentAlignment="Center"></TextBox>
+                    <Button x:Name="btnAddBlackBox" Content="Add Black Box" Width="80" Margin="2" Click="btnAddBlackBox_Click"></Button>
+                </StackPanel>   
+            </Grid>
+
+            <Grid Grid.Column="1" Grid.Row="1">
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Name="tbProcessName" Width="270" Margin="4" FontSize="20" VerticalContentAlignment="Center"></TextBox>
+                    <Button Name="btnCreate" Content="Create" Width="90" Margin="2" Click="btnCreate_Click"></Button>
+                    <Button Name="btnEnd" Content="End" Width="90" Margin="2" Click="btnEnd_Click"></Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
